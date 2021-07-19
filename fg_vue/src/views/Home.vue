@@ -41,6 +41,7 @@ export default {
   },
   mounted(){
     this.getLatestProducts()
+     document.title = 'Home | FitnessGear'
   },
   methods: {
     async getLatestProducts(){
