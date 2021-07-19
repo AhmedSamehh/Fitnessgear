@@ -43,15 +43,16 @@ export default {
     this.getLatestProducts()
   },
   methods: {
-    getLatestProducts(){
-  
-      axios.get('/api/v1/latest-products/').then(response =>{
+    async getLatestProducts(){
+      this.$store.commit('setIsLoading', true)
+      await axios.get('/api/v1/latest-products/').then(response =>{
         this.latestProducts = response.data
         console.log(response.data[0].get_thumbnail)
       })
       .catch(e =>{
         console.log(e)
       })
+       this.$store.commit('setIsLoading', false)
     }
   }
 }
