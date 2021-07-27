@@ -29,7 +29,7 @@
               <h2 class="subtitle">Summary</h2>
               <strong>${{cartTotalPrice.toFixed(2)}}</strong>, {{cartTotalLength}} items
               <hr>
-              <router-link to="/cart/checkout" class="is-dark button">Proceed to checkout</router-link>
+              <router-link v-if="cartTotalLength" to="/cart/checkout" class="is-dark button">Proceed to checkout</router-link>
           </div>
       </div>
   </div>
