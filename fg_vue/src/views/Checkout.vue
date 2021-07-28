@@ -138,7 +138,7 @@ export default {
         }
     },
     mounted() {
-        document.title = 'Checkout | Djackets'
+        document.title = 'Checkout | Fitness Gear'
         this.cart = this.$store.state.cart
         if (this.cartTotalLength > 0) {
             this.stripe = Stripe('pk_test_51JICaODgaAa7v1zG6kvKy8yIhwTqFy6R3izMpbJQJU8D4EZ4II2fpZSNMORQ6O8qbAa81x3I03j852LwcRfyeElO00BKRIPh9p')
