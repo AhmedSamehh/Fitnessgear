@@ -140,12 +140,12 @@ export default {
     mounted() {
         document.title = 'Checkout | Djackets'
         this.cart = this.$store.state.cart
-        // if (this.cartTotalLength > 0) {
-        //     this.stripe = Stripe('pk_test_51H1HiuKBJV2qfWbD2gQe6aqanfw6Eyul5PO2KeOuSRlUMuaV4TxEtaQyzr9DbLITSZweL7XjK3p74swcGYrE2qEX00Hz7GmhMI')
-        //     const elements = this.stripe.elements();
-        //     this.card = elements.create('card', { hidePostalCode: true })
-        //     this.card.mount('#card-element')
-        // }
+        if (this.cartTotalLength > 0) {
+            this.stripe = Stripe('pk_test_51JICaODgaAa7v1zG6kvKy8yIhwTqFy6R3izMpbJQJU8D4EZ4II2fpZSNMORQ6O8qbAa81x3I03j852LwcRfyeElO00BKRIPh9p')
+            const elements = this.stripe.elements();
+            this.card = elements.create('card', { hidePostalCode: true })
+            this.card.mount('#card-element')
+        }
     },
     methods: {
         getItemTotal(item) {
